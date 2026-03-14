@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Donation Page</title>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+margin-top:100px;
+}
+
+button{
+padding:12px 22px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+input{
+padding:8px;
+font-size:16px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="content">
+
+<h2>Do you want to donate your money to me?</h2>
+
+<button onclick="donate()">YESSSS</button>
+<button onclick="no1()">No :(</button>
+
+</div>
+
+<script>
+
+function donate(){
+document.getElementById("content").innerHTML = `
+<h2>How much?</h2>
+
+<p>Nominal:</p>
+<input type="number" id="amount">
+
+<p>Transfer to: <b>8015138889</b></p>
+<p>Kode unik: <b>3</b></p>
+
+<br><br>
+<button onclick="finish()">Continue</button>
+`;
+}
+
+function finish(){
+
+let amount = document.getElementById("amount").value;
+
+if(amount === ""){
+alert("Write the nominal first!");
+return;
+}
+
+document.getElementById("content").innerHTML = `
+<h1>THANK YOUUU MUACHH 💖</h1>
+`;
+}
+
+function no1(){
+document.getElementById("content").innerHTML = `
+<h2>Why not? Do you know how much people suffer this day?</h2>
+
+<button onclick="donate()">Yes, okay fine I will donate</button>
+<button onclick="no2()">NO</button>
+`;
+}
+
+function no2(){
+document.getElementById("content").innerHTML = `
+<h2>Do you know how selfish you are right now? Do you really that heartless omg, can you imagine living like a devil?</h2>
+
+<button onclick="donate()">YES</button>
+<button onclick="no3()">NO</button>
+`;
+}
+
+function no3(){
+document.getElementById("content").innerHTML = `
+<h2>Why just why..... you know you only live once right, can you just do it. What you think im rude?</h2>
+
+<button onclick="donate()">Nooo of course, you are not. Fine I will donate</button>
+
+<button onclick="donate()">Yess, but you convinced me then yes okay fine I will donate</button>
+`;
+}
+
+</script>
+
+</body>
+</html>
